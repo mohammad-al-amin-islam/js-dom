@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #second-title{
+            background-color: rgba(210, 105, 30, 0.068);
+        } */
+        /* .blog{
+            border :2px solid red;
+            border-radius: 5px;
+            margin: 5px;
+            padding: 5px;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <head>
+        <h1>Weclome to my blog website</h1>
+    </head>
+    <main>
+        <section id="blogs">
+            <header>
+                <h2>heading list</h2>
+                <ul id="blog-list">
+                    <li>blog-list - 1</li>
+                    <li>blog-list - 2</li>
+                    <li>blog-list - 3</li>
+                </ul>
+            </header>
+            <article id="blog" class="blog">
+                <h1 id="first-title">My Awesome Blog - 1</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate nobis consectetur repellendus
+                    laborum, quas enim, illo unde accusamus ex ut facilis, corrupti dolore iusto asperiores sunt?
+                    Molestiae, reprehenderit minima? Mollitia quas, repellat quisquam, assumenda architecto at magni ex
+                    quasi, dolores blanditiis quam. Nam dolorum quod nemo, asperiores quasi minima adipisci?</p>
+            </article>
+            <article id="second-blog" class="blog">
+                <h1 id="second-title">My Awesome Blog - 2</h1>
+                <p>Laborum illo ut incidunt dolor expedita dolores odio dolore repudiandae autem. Voluptas reiciendis
+                    rem magni laborum possimus, id voluptate ipsa velit temporibus reprehenderit accusantium ducimus
+                    quaerat iure laboriosam, eligendi cumque quam dolore at ipsum nisi voluptatum vitae quae voluptates
+                    a. Ipsa harum dolore quia quibusdam nisi. Nisi debitis perspiciatis molestias.</p>
+            </article>
+            <article class="blog">
+                <h1 id="third-title">My Awesome Blog - 3</h1>
+                <p>Sequi facilis, officiis, ad tempora facere pariatur asperiores quos dignissimos ex ut delectus
+                    corrupti hic iusto mollitia culpa nulla assumenda consequatur cumque sed. Exercitationem odio
+                    explicabo molestiae autem laborum magni, reprehenderit, debitis vitae nulla delectus vel et nesciunt
+                    iste. Incidunt, tenetur voluptatem rerum cum provident error maiores ducimus earum mollitia?</p>
+            </article>
+            <article class="blog">
+                <h1 id="fourth-title">My Awesome Blog - 4</h1>
+                <p>Sequi facilis, officiis, ad tempora facere pariatur asperiores quos dignissimos ex ut delectus
+                    corrupti hic iusto mollitia culpa nulla assumenda consequatur cumque sed. Exercitationem odio
+                    explicabo molestiae autem laborum magni, reprehenderit, debitis vitae nulla delectus vel et nesciunt
+                    iste. Incidunt, tenetur voluptatem rerum cum provident error maiores ducimus earum mollitia?</p>
+            </article>
+        </section>
+
+
+        <script>
+            // console.log(document);
+            // console.log(document.body);
+
+            const blogTitles = document.getElementsByTagName('h1');
+            console.log(blogTitles);
+            for (const h1 of blogTitles) {
+                //console.log(h1);
+                //console.log(h1.innerText);
+            }
+
+            const blogDetails = document.getElementsByTagName('p');
+            console.log(blogDetails);
+            for (const p of blogDetails) {
+                // console.log(p);
+                //console.log(p.innerText);
+            }
+
+            //explore getElementById
+            const secondTitle = document.getElementById('second-title');
+            secondTitle.style.textAlign = 'center';
+
+            const fourth = document.getElementById('fourth-title');
+            fourth.style.backgroundColor = 'salmon';
+            fourth.style.padding = ('10px');
+            fourth.style.marginLeft = ('15px');
+            fourth.innerText = 'This heading is changed by JS';
+
+
+            //explore getElementsByClass
+            /* const blogs = document.getElementsByClassName('blog');
+            for (let blog of blogs) {
+                blog.style.border = '2px solid red';
+                blog.style.borderRadius = '5px';
+                blog.style.margin = '5px';
+                blog.style.padding = '5px';
+            } */
+
+
+            //adding element using js
+            //create element
+            const li = document.createElement('li');
+            li.innerText = 'blog-list - 4';
+
+            //search where to add
+            const list = document.getElementById('blog-list');
+            list.appendChild(li);
+
+
+            //adding the article
+            //create article
+            const article = document.createElement('article');
+            article.classList.add('blog')
+            /* const h1 = document.createElement('h1');
+            const p = document.createElement('p');
+            h1.innerText = 'My Awesome Blog - 5';
+            p.innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate nobis consectetur repellendus laborum, quas enim, illo unde accusamus ex ut facilis, corrupti dolore iusto asperiores sunt? Molestiae, reprehenderit minima?';
+            article.appendChild(h1);
+            article.appendChild(p); */
+            article.innerHTML = `
+            <h1>My Awesome Blog - 5</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate nobis consectetur repellendus laborum, quas enim, illo unde accusamus ex ut facilis, corrupti dolore iusto asperiores sunt? Molestiae, reprehenderit minima?</p>
+             `
+
+            //search where to add
+            const head = document.getElementById('blogs');
+            head.appendChild(article);
+
+            const blogs = document.getElementsByClassName('blog');
+            for (let blog of blogs) {
+                blog.style.border = '2px solid red';
+                blog.style.borderRadius = '5px';
+                blog.style.margin = '5px';
+                blog.style.padding = '5px';
+            }
+
+
+
+
+
+
+        </script>
+    </main>
+</body>
+
+</html>
